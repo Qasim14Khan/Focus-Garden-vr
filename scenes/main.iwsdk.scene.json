@@ -1,0 +1,115 @@
+{
+  "version": "iwsdk.scene.v1",
+  "units": "meters",
+  "components": {
+    "com.iwsdk.components.DomeGradient": {
+      "sky": [
+        0.33,
+        0.56,
+        0.86,
+        1
+      ],
+      "equator": [
+        0.8,
+        0.87,
+        0.94,
+        1
+      ],
+      "ground": [
+        0.353,
+        0.522,
+        0.275,
+        1
+      ],
+      "elevationDeg": 24,
+      "azimuthDeg": -31,
+      "dither": true
+    },
+    "com.iwsdk.components.IBLGradient": {
+      "sky": [
+        0.6,
+        0.74,
+        0.93,
+        1
+      ],
+      "equator": [
+        0.82,
+        0.86,
+        0.9,
+        1
+      ],
+      "ground": [
+        0.35,
+        0.5,
+        0.3,
+        1
+      ],
+      "intensity": 0.3
+    }
+  },
+  "environment": {
+    "toneMapping": "aces",
+    "exposure": 1.05,
+    "shadows": true,
+    "shadowMapType": "pcf"
+  },
+  "resources": {},
+  "nodes": [
+    {
+      "id": "key-light",
+      "name": "Key Light",
+      "transform": {
+        "position": [
+          -4.6,
+          8.9,
+          6.6
+        ],
+        "rotationDeg": [
+          -48,
+          -35,
+          0
+        ]
+      },
+      "components": {
+        "DirectionalLight": {
+          "color": [
+            1,
+            0.93,
+            0.82,
+            1
+          ],
+          "intensity": 2.8,
+          "castShadow": true,
+          "shadowMapSize": "2048",
+          "shadowCameraSize": 16,
+          "shadowCameraNear": 1,
+          "shadowCameraFar": 32,
+          "shadowRadius": 4,
+          "shadowBias": -0.0004,
+          "shadowNormalBias": 0.02
+        }
+      }
+    },
+    {
+      "id": "fill-light",
+      "name": "Fill Light",
+      "components": {
+        "HemisphereLight": {
+          "skyColor": [
+            0.78,
+            0.83,
+            0.96,
+            1
+          ],
+          "groundColor": [
+            0.592,
+            0.608,
+            0.651,
+            1
+          ],
+          "intensity": 0.75
+        }
+      }
+    }
+  ]
+}
